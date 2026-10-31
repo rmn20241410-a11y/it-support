@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>Реєстрація — IT Support</title>
+</head>
+<body>
+<div class="split">
+  <aside class="hero">
+    <strong class="brand">IT Support</strong>
+    <div>
+      <h1>Щось зламалось? Створіть заявку.</h1>
+      <p>Опишіть проблему, і ІТ-фахівці візьмуть її в роботу. Статус і коментарі ви бачите в особистому кабінеті.</p>
+    </div>
+    <article class="ticket t-in_progress">
+      <div class="stub"><small>заявка</small><b>№1002</b></div>
+      <div class="body">
+        <div class="req-head"><h3>Не працює Wi-Fi</h3><span class="badge s-in_progress">У роботі</span></div>
+        <p class="meta"><span>Ноутбук</span><span>Кабінет 214</span></p>
+      </div>
+    </article>
+  </aside>
+  <main class="auth-main"><div class="auth">
+    <h2>Створення облікового запису</h2>
+    <p class="muted">Це займе хвилину.</p>
+    <form id="register-form" novalidate>
+      <label>Ім’я та прізвище<input type="text" name="full_name" autocomplete="name"></label>
+      <label>Електронна пошта<input type="email" name="email" autocomplete="email"></label>
+      <label>Пароль<input type="password" name="password" autocomplete="new-password"></label>
+      <label>Підтвердження пароля<input type="password" name="password2" autocomplete="new-password"></label>
+      <p id="msg" hidden></p>
+      <button class="btn" type="submit">Зареєструватися</button>
+    </form>
+    <p class="muted" style="margin-top:16px">Вже є обліковий запис? <a href="index.html">Увійти</a></p>
+  </div></main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

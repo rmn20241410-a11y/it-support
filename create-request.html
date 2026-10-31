@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>Нова заявка — IT Support</title>
+</head>
+<body>
+<header class="topbar">
+  <strong class="brand">IT Support</strong><span class="crumb"></span>
+  <span><a href="dashboard.html">Мої заявки</a> <span id="user-name"></span> <button class="btn light" data-logout>Вийти</button></span>
+</header>
+<main class="container">
+  <form id="request-form" class="card" novalidate>
+    <h2>Нова заявка на ремонт</h2>
+    <label>Назва заявки *<input type="text" name="title" maxlength="120"></label>
+    <div class="row">
+      <label>Тип обладнання *
+        <select name="equipment_type">
+          <option value="computer">Комп’ютер</option><option value="laptop">Ноутбук</option><option value="printer">Принтер</option>
+          <option value="monitor">Монітор</option><option value="other">Інше</option>
+        </select>
+      </label>
+      <label>Інвентарний номер<input type="text" name="inventory_number"></label>
+      <label>Кабінет / місце *<input type="text" name="location"></label>
+    </div>
+    <label>Опис проблеми *<textarea name="description"></textarea></label>
+    <div class="row">
+      <label>Контактний телефон або інші дані *<input type="text" name="contact"></label>
+      <label>Дата створення<input id="created-date" type="text" readonly></label>
+    </div>
+    <p id="msg" hidden></p>
+    <button class="btn" type="submit">Надіслати заявку</button>
+    <a class="btn light" href="dashboard.html">Скасувати</a>
+  </form>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/requests.js"></script>
+</body>
+</html>

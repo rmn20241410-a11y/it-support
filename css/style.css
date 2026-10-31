@@ -1,0 +1,119 @@
+/* IT Support — оформлення. Шрифти: Unbounded (заголовки), Onest (текст) */
+:root{
+  --paper:#e6ebf0;--card:#fff;--ink:#233140;--muted:#6a7b8d;--line:#d2dae2;
+  --blue:#4a6d91;--blue-d:#38566f;
+  --c-new:#3f72a8;--c-in_progress:#c4902f;--c-waiting:#7a76b0;--c-completed:#3f8c78;--c-rejected:#b9534f;
+  --font:"Onest","Segoe UI",system-ui,sans-serif;--display:"Unbounded","Onest",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;font-family:var(--font);background:var(--paper);color:var(--ink);line-height:1.5}
+h1,h2{font-family:var(--display);font-weight:600;letter-spacing:-.01em;line-height:1.2;margin:0 0 12px}
+h1{font-size:1.9rem}h2{font-size:1.15rem}h3{font-size:1.02rem;margin:0}
+a{color:var(--blue)}
+p{margin:0 0 10px}
+:focus-visible{outline:3px solid #9fb7cf;outline-offset:2px}
+
+/* Верхня панель */
+.topbar{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  background:#fff;border-bottom:1px solid var(--line);padding:12px 24px}
+.topbar a{color:var(--ink);text-decoration:none;font-weight:500;margin-right:14px}
+.topbar a:hover{color:var(--blue)}
+.brand{font-family:var(--display);font-size:1rem;display:flex;align-items:center}
+.brand::before{content:"";width:16px;height:16px;margin-right:9px;background:var(--blue);border-radius:5px 5px 5px 0}
+.crumb{color:var(--muted);margin-right:auto}
+.topbar>span:last-child{margin-left:auto;display:flex;align-items:center;gap:12px}
+.crumb+span{margin-left:0}
+#user-name{font-weight:600}
+
+.container{max-width:1120px;margin:28px auto;padding:0 20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0 12px}
+.toolbar h2{margin:0}
+
+/* Форми */
+label{display:block;margin-bottom:14px;font-size:.88rem;font-weight:600;color:#2f3f50}
+input,select,textarea{width:100%;margin-top:6px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;
+  font:inherit;font-weight:400;color:var(--ink);background:#fff}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px #d3e0ec}
+input:disabled,select:disabled,textarea:disabled,input[readonly]{background:#e9eef3;color:var(--muted)}
+textarea{min-height:100px;resize:vertical}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 16px}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:11px 18px;font:inherit;font-weight:600;
+  cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--blue-d)}
+.topbar .btn{color:#fff;margin:0}
+.btn.light{background:#dfe6ed;color:var(--ink)}
+.btn.light:hover{background:#cfd8e1}
+.btn:disabled{opacity:.55;cursor:default}
+.muted{color:var(--muted);font-size:.9rem}
+.msg{padding:11px 14px;border-radius:10px;font-size:.92rem;border-left:4px solid;margin:0 0 14px}
+.msg.error{background:#fdecec;color:#8f1f1f;border-color:var(--c-rejected)}
+.msg.success{background:#e5f6ed;color:#0f5f37;border-color:var(--c-completed)}
+
+/* Вхід і реєстрація */
+.split{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr}
+.hero{background:#2c3b4b;color:#fff;padding:48px;display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.hero .brand{color:#fff}
+.hero h1{font-size:2.1rem;max-width:14ch}
+.hero p{color:#b3c1cf;max-width:40ch}
+.hero .ticket{color:var(--ink);max-width:420px;margin:0}
+.auth-main{display:grid;place-items:center;padding:32px}
+.auth{width:100%;max-width:380px}
+.auth h2{font-size:1.5rem;margin-bottom:6px}
+.auth .btn{width:100%;margin-top:4px}
+
+/* Статуси, пріоритети (змінна --st задає колір) */
+.s-new,.t-new{--st:var(--c-new)}.s-in_progress,.t-in_progress{--st:var(--c-in_progress)}
+.s-waiting,.t-waiting{--st:var(--c-waiting)}.s-completed,.t-completed{--st:var(--c-completed)}
+.s-rejected,.t-rejected{--st:var(--c-rejected)}
+.p-low{--st:#7b8a9a}.p-medium{--st:#4a82b8}.p-high{--st:#c4902f}.p-critical{--st:#b9534f}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:99px;font-size:.78rem;font-weight:600;
+  white-space:nowrap;color:var(--st);background:color-mix(in srgb,var(--st) 12%,#fff)}
+.badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--st)}
+
+/* Заявка-квиток */
+.ticket{display:grid;grid-template-columns:96px 1fr;background:#fff;border:1px solid var(--line);border-radius:14px;
+  margin-bottom:12px;overflow:hidden}
+.stub{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:12px;
+  border-right:2px dashed var(--line);background:color-mix(in srgb,var(--st) 9%,#fff)}
+.stub small{color:var(--muted);font-size:.72rem}
+.stub b{font-family:var(--display);font-size:1rem;color:var(--st)}
+.ticket .body{padding:16px 20px;min-width:0}
+.req-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:6px}
+.meta{display:flex;flex-wrap:wrap;gap:4px 16px;color:var(--muted);font-size:.86rem}
+.note{background:#e9eef3;border-radius:10px;padding:9px 12px;font-size:.9rem}
+.empty{text-align:center;color:var(--muted);padding:32px 0}
+
+/* Статистика */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid var(--line);border-radius:14px;
+  overflow:hidden;margin-bottom:16px}
+.stats .stat{margin:0;border:0;border-radius:0;border-right:1px solid var(--line);padding:18px 24px;color:var(--muted);font-size:.9rem}
+.stats .stat:last-child{border-right:0}
+.stat b{display:block;font-family:var(--display);font-size:2rem;line-height:1.1;color:var(--ink)}
+.stat:nth-child(1) b{color:var(--c-new)}.stat:nth-child(2) b{color:var(--c-in_progress)}.stat:nth-child(3) b{color:var(--c-completed)}
+
+/* Таблиця */
+.table-wrap{overflow-x:auto;padding:0}
+table{width:100%;border-collapse:collapse;font-size:.92rem}
+th{background:#f1f4f7;color:var(--muted);font-weight:600;font-size:.82rem}
+th,td{padding:12px 16px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+tbody tr[data-id]{cursor:pointer}
+tbody tr[data-id]:hover{background:#edf2f7}
+tr.overdue td:first-child{box-shadow:inset 4px 0 0 var(--c-rejected)}
+
+.loader{width:28px;height:28px;border:3px solid var(--line);border-top-color:var(--blue);border-radius:50%;
+  animation:spin 1s linear infinite;margin:20px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.loader{animation-duration:4s}}
+
+@media (max-width:860px){
+  .split{grid-template-columns:1fr}
+  .hero{padding:28px 24px}.hero .ticket,.hero p{display:none}.hero h1{font-size:1.5rem;max-width:none}
+}
+@media (max-width:600px){
+  .topbar{padding:10px 14px}.container{margin:16px auto}
+  .stats{grid-template-columns:1fr}.stats .stat{border-right:0;border-bottom:1px solid var(--line)}
+  .ticket{grid-template-columns:70px 1fr}.ticket .body{padding:12px 14px}.req-head{flex-direction:column}
+}

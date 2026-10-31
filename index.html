@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<title>Вхід — IT Support</title>
+</head>
+<body>
+<div class="split">
+  <aside class="hero">
+    <strong class="brand">IT Support</strong>
+    <div>
+      <h1>Щось зламалось? Створіть заявку.</h1>
+      <p>Опишіть проблему, і ІТ-фахівці візьмуть її в роботу. Статус і коментарі ви бачите в особистому кабінеті.</p>
+    </div>
+    <article class="ticket t-in_progress">
+      <div class="stub"><small>заявка</small><b>№1002</b></div>
+      <div class="body">
+        <div class="req-head"><h3>Не працює Wi-Fi</h3><span class="badge s-in_progress">У роботі</span></div>
+        <p class="meta"><span>Ноутбук</span><span>Кабінет 214</span></p>
+      </div>
+    </article>
+  </aside>
+  <main class="auth-main"><div class="auth">
+    <h2>Вхід</h2>
+    <p class="muted">Увійдіть, щоб побачити свої заявки.</p>
+    <form id="login-form" novalidate>
+      <label>Електронна пошта<input type="email" name="email" autocomplete="email"></label>
+      <label>Пароль<input type="password" name="password" autocomplete="current-password"></label>
+      <p id="msg" hidden></p>
+      <button class="btn" type="submit">Увійти</button>
+    </form>
+    <p class="muted" style="margin-top:16px">Немає облікового запису? <a href="register.html">Зареєструватися</a></p>
+  </div></main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

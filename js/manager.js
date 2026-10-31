@@ -1,0 +1,1 @@
+initStaffPanel("manager");
